@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Defines the character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Makes the website responsive on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- The title displayed in the browser tab -->
+    <title>QuizMaster | Test Your Knowledge</title>
+
+    <!-- Connects the CSS file to this HTML document -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Main container holds the entire quiz application -->
+    <main class="quiz-container">
+
+        <!-- Welcome screen shown before the quiz starts -->
+        <section id="start-screen" class="screen">
+
+            <div class="icon">🧠</div>
+
+            <h1>QuizMaster</h1>
+
+            <p class="subtitle">
+                Challenge yourself and test your knowledge!
+            </p>
+
+            <div class="quiz-info">
+                <span>📝 5 Questions</span>
+                <span>🎯 Multiple Choice</span>
+            </div>
+
+            <!-- JavaScript will listen for clicks on this button -->
+            <button id="start-btn" class="primary-btn">
+                Start Quiz →
+            </button>
+
+        </section>
+
+
+        <!-- Quiz screen: hidden until the user starts the quiz -->
+        <section id="quiz-screen" class="screen hidden">
+
+            <div class="quiz-header">
+
+                <span id="question-counter">Question 1 of 5</span>
+
+                <span id="score-display">Score: 0</span>
+
+            </div>
+
+            <!-- Progress bar showing how far the user has progressed -->
+            <div class="progress-track">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+
+            <!-- JavaScript inserts the current question here -->
+            <h2 id="question-text">Question appears here</h2>
+
+            <!-- JavaScript inserts answer buttons inside this container -->
+            <div id="answer-buttons" class="answer-buttons"></div>
+
+            <!-- Feedback tells the user whether the answer was correct -->
+            <p id="feedback" class="feedback" aria-live="polite"></p>
+
+            <!-- Disabled until the user selects an answer -->
+            <button id="next-btn" class="primary-btn" disabled>
+                Next Question →
+            </button>
+
+        </section>
+
+
+        <!-- Result screen shown when all questions are answered -->
+        <section id="result-screen" class="screen hidden">
+
+            <div class="icon">🏆</div>
+
+            <h1>Quiz Completed!</h1>
+
+            <p class="subtitle">Here is your final result.</p>
+
+            <!-- JavaScript updates these values -->
+            <div id="final-score" class="final-score">0 / 5</div>
+
+            <p id="result-message"></p>
+
+            <!-- Restarts the quiz from the beginning -->
+            <button id="restart-btn" class="primary-btn">
+                Try Again ↻
+            </button>
+
+        </section>
+
+    </main>
+
+    <!-- Loads the JavaScript after the HTML elements are created -->
+    <script src="script.js"></script>
+
+</body>
+</html>

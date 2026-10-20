@@ -1,0 +1,238 @@
+/* Reset default browser spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main page design */
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+
+    /* Creates a modern purple gradient background */
+    background: linear-gradient(135deg, #667eea, #764ba2);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+/* Main quiz card */
+.quiz-container {
+    width: 100%;
+    max-width: 520px;
+
+    background: white;
+
+    border-radius: 24px;
+    padding: 35px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+/* Each screen uses the same basic layout */
+.screen {
+    text-align: center;
+}
+
+/* Utility class for hiding screens */
+.hidden {
+    display: none;
+}
+
+/* Welcome and result icons */
+.icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+/* Main headings */
+h1 {
+    font-size: 32px;
+    color: #292447;
+    margin-bottom: 12px;
+}
+
+/* Question heading */
+h2 {
+    font-size: 22px;
+    color: #292447;
+    line-height: 1.5;
+    margin: 28px 0 22px;
+}
+
+/* Subtitle and supporting text */
+.subtitle {
+    color: #77748a;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* Welcome screen information */
+.quiz-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-bottom: 30px;
+}
+
+.quiz-info span {
+    background: #f1efff;
+    color: #6c55c7;
+
+    padding: 10px 14px;
+    border-radius: 12px;
+
+    font-size: 13px;
+}
+
+/* Reusable primary button */
+.primary-btn {
+    width: 100%;
+
+    background: linear-gradient(135deg, #7367f0, #8b5cf6);
+    color: white;
+
+    border: none;
+    border-radius: 12px;
+
+    padding: 15px;
+    margin-top: 15px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.primary-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+.primary-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Quiz header containing question number and score */
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+
+    color: #6c55c7;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Background of the progress bar */
+.progress-track {
+    width: 100%;
+    height: 8px;
+
+    background: #eeecf8;
+
+    border-radius: 20px;
+    overflow: hidden;
+
+    margin-top: 20px;
+}
+
+/* The colored part grows as questions are answered */
+.progress-bar {
+    width: 0%;
+    height: 100%;
+
+    background: linear-gradient(90deg, #7367f0, #b16cea);
+
+    transition: width 0.3s ease;
+}
+
+/* Answer button layout */
+.answer-buttons {
+    display: grid;
+    gap: 12px;
+}
+
+/* Individual answer buttons */
+.answer-btn {
+    width: 100%;
+
+    background: #f8f7fc;
+    color: #353149;
+
+    border: 2px solid #eeecf5;
+    border-radius: 12px;
+
+    padding: 14px;
+    text-align: left;
+
+    font-size: 15px;
+
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.answer-btn:hover:not(:disabled) {
+    background: #f0edff;
+    border-color: #9a8cf5;
+}
+
+/* Green style for correct answers */
+.answer-btn.correct {
+    background: #e4f8ec;
+    border-color: #39a96b;
+    color: #197443;
+}
+
+/* Red style for incorrect selected answers */
+.answer-btn.wrong {
+    background: #ffebeb;
+    border-color: #e35d6a;
+    color: #b42332;
+}
+
+/* Feedback displayed after an answer is selected */
+.feedback {
+    min-height: 25px;
+    margin-top: 16px;
+
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Final score on the result screen */
+.final-score {
+    font-size: 48px;
+    font-weight: bold;
+
+    color: #7367f0;
+
+    margin: 25px 0;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 480px) {
+    .quiz-container {
+        padding: 25px 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 19px;
+    }
+
+    .quiz-header {
+        font-size: 12px;
+    }
+}
